@@ -1,0 +1,90 @@
+//Parking Management System project 
+
+
+#include<stdio.h>     //header file for used print and scan
+#include<conio.h>     //For user clear screen and get ch
+
+int Manu();
+void Bus();
+void Cycle();
+void Rikasha();
+void Showdetail();
+void Delete();
+
+int nor=0, nob=0, noc=0, amount=0, count=0;
+
+void main(){
+while(1){
+	clrscr();
+	switch(Manu()){
+		case 1 : Bus();
+			break;
+		case 2 : Rikasha();
+			break;
+		case 3 : Cycle();
+			break;
+		case 4 : Showdetail();
+			break;
+		case 5 : Delete();
+			break;
+		case 6 : exit(0);
+		default : printf("Invalid no.");
+	}
+	getch();
+	}
+}
+
+int Manu(){
+	int ch;
+	printf("      Menu\n\n");
+	printf("1. Enter a Bus\n");
+	printf("2. Enter a Rikasha\n");
+	printf("3. Enter a Cycle");
+	printf("4. Enter for showdetail\n");
+	printf("5. Enter a Delete Data\n");
+	printf("6. Enter for exit\n\n");
+	printf("Enter your choice : ");
+	scanf("%d", &ch);
+	return(ch);
+}
+
+	
+	
+void Showdetail(){
+	printf("\nNumber a Bus = %d\n", nob);
+	printf("Number a Riksha = %d \n", nor);
+	printf("Number a Cycle = %d\n", noc);
+	printf("Total Vehicle = %d \n", count);
+	printf("Total gain amount = %d\n", amount);
+}	
+
+void Delete(){
+	printf("Data Delete");
+	nob=0;
+	noc=0;
+	nor=0;
+	amount=0;
+	count=0;
+}
+	
+void Cycle(){
+	printf("Entry succefull");
+	noc++;
+	amount=amount+20;
+	count++;
+}
+
+void Rikasha(){
+	printf("Entry succefull");
+	nor++;
+	amount=amount+50;
+	count++;
+}
+
+void Bus(){
+	printf("Entry succefull");
+	nob++;
+	amount=amount+100;
+	count++;
+}
+
